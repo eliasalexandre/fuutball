@@ -1,3 +1,121 @@
 .mainContainer {
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.mainContent {
+  position: relative;
+}
+
+.asideContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100vh - 85px);
+  max-width: 300px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 2rem 0;
+
+  overflow: hidden;
+  overflow-y: auto;
+
+  box-shadow: var(--panel-shadow);
+
+  > div.asideLimit {
+    max-width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > article {
+      max-height: 809px;
+      height: 100%;
+
+      > div {
+        display: flex;
+        justify-content: flex-end;
+
+        span {
+          border-radius: 3px;
+          background-color: #f4f4f4;
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--primary-white);
+          }
+        }
+
+        svg {
+          width: 27px;
+          height: 27px;
+        }
+      }
+
+      > form {
+        margin: 2rem 0;
+
+        > input {
+          height: 40px;
+          padding: 0 1rem;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          border-radius: 2rem;
+          font-size: 1.1rem;
+        }
+      }
+
+      > section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        > span {
+          cursor: pointer;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+
+          min-height: 1.5rem;
+          padding: 0.3rem 0.5rem;
+          margin: 0.4rem 0.5rem;
+          border-radius: 0.8rem;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+
+          background: var(--tertiary-white);
+          color: #515151;
+
+          &:hover {
+            color: #6200ee;
+          }
+        }
+      }
+    }
+
+    > footer {
+      line-height: 24px;
+      > strong {
+        color: #33aaee;
+      }
+
+      > div {
+        section {
+          display: flex;
+          flex-wrap: wrap;
+
+          > div {
+            background: var(--secondary-fork);
+            border-radius: 6px;
+            padding: 0.5rem 0.8rem;
+            margin: 0.3rem;
+          }
+        }
+      }
+    }
+  }
 }

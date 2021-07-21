@@ -25,6 +25,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --primary-white: #f5f3f5;
+  --primary-white-00: #f4f2f4;
+  --primary-fork: #2ea44f;
+  --secondary-fork: #2ea4;
+
+  --panel-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
 button {
   cursor: pointer;
   border: 0;

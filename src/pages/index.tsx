@@ -21,7 +21,25 @@ export default function Home() {
         <Header />
 
         <div className={styles.mainContent}>
-          <article>conteúdo principal</article>
+          <article className={styles.contentContainer}>
+            <div>
+              <section className={styles.currentMatch}>
+                <div itemID={styles.left}>
+                  <h1>Barcelona</h1>
+                  <p>1</p>
+                </div>
+                <div className={styles.line} />
+                <div itemID={styles.right}>
+                  <h1>Real Madrid</h1>
+                  <p>2</p>
+                </div>
+                <section className={styles.versus}>VS</section>
+                <section className={styles.createdAt}>
+                  <span>20 Jan 2020</span>
+                </section>
+              </section>
+            </div>
+          </article>
 
           <aside className={styles.asideContainer}>
             <div className={styles.asideLimit}>

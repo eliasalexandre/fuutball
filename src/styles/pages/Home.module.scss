@@ -28,6 +28,7 @@
   overflow-y: auto;
 
   box-shadow: var(--panel-shadow);
+  transition: var(--global-transition);
 
   > div.asideLimit {
     max-width: 270px;
@@ -99,12 +100,23 @@
     }
 
     > footer {
+      transition: 0.6s all cubic-bezier(0.4, 0, 0.2, 1);
+
       line-height: 24px;
-      > strong {
+      button > strong {
         color: #33aaee;
       }
 
-      > div {
+      div {
+        transition: var(--global-transition);
+      }
+
+      > div.close {
+        visibility: visible;
+        > strong {
+          color: #33aaee;
+        }
+
         section {
           display: flex;
           flex-wrap: wrap;
@@ -116,6 +128,9 @@
             margin: 0.3rem;
           }
         }
+      }
+      > div.open {
+        visibility: hidden;
       }
     }
   }

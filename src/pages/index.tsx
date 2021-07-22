@@ -1,11 +1,18 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 import { FiX } from "react-icons/fi";
 
 import Header from "../components/Header";
 import styles from "../styles/pages/Home.module.scss";
 
 export default function Home() {
+  const [isSponsorPanelOpen, setIsSponsorPanelOpen] = useState(false);
+
+  function changeSponsorPanelState() {
+    setIsSponsorPanelOpen(!isSponsorPanelOpen);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -75,18 +82,26 @@ export default function Home() {
 
               <footer>
                 <p>if you liked this site be a sponsor</p>
-                <strong>SUPPORT ME</strong>
-                <div className={styles.sponsor}>
-                  <p>any amount is welcome</p>
-                  <section>
-                    <div>
-                      <strong>PayPal | PIX</strong>
-                      <p>eliasalex52@gmail.com</p>
-                    </div>
-                  </section>
+                <button type="button" onClick={changeSponsorPanelState}>
+                  <strong>SUPPORT ME</strong>
+                </button>
+                <div
+                  className={isSponsorPanelOpen ? styles.close : styles.open}
+                >
+                  <div className={styles.sponsor}>
+                    <p>any amount is welcome</p>
+                    <section>
+                      <div>
+                        <strong>PayPal | PIX</strong>
+                        <p>eliasalex52@gmail.com</p>
+                      </div>
+                    </section>
+                  </div>
+                  <strong>Contact me</strong>{" "}
+                  <a href="mailto:fuutball.oi@gmail.com">
+                    fuutball.oi@gmail.com
+                  </a>
                 </div>
-                <strong>Contact me</strong>{" "}
-                <a href="mailto:fuutball.oi@gmail.com">fuutball.oi@gmail.com</a>
               </footer>
             </div>
           </aside>

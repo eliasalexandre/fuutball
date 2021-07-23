@@ -141,6 +141,8 @@
 .asideContainer.collapse {
   width: 5rem;
 
+  box-shadow: initial;
+
   > div.asideLimit {
     display: none;
   }
@@ -148,7 +150,7 @@
 
 .contentContainer {
   /* article */
-  // max-width: 650px;
+  max-width: 650px;
   max-width: calc(100% - 300px);
   width: 100%;
 

@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FiX, FiMenu } from "react-icons/fi";
+import { FiX, FiMenu, FiArrowRight, FiArrowDown } from "react-icons/fi";
 
 import WinnerImg from "../../public/assets/winner.png";
 import { Embed } from "../components/Embed";
@@ -11,6 +11,7 @@ import styles from "../styles/pages/Home.module.scss";
 
 export default function Home() {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
+  const [isReadMoreOpen, setIsReadMoreOpen] = useState(false);
   const [isSponsorPanelOpen, setIsSponsorPanelOpen] = useState(false);
 
   function changeSponsorPanelState() {
@@ -18,6 +19,9 @@ export default function Home() {
   }
   function changeAsideState() {
     setIsAsideOpen(!isAsideOpen);
+  }
+  function handleReadMorePanel() {
+    setIsReadMoreOpen(!isReadMoreOpen);
   }
 
   return (
@@ -52,6 +56,32 @@ export default function Home() {
                   <span>20 Jan 2020</span>
                 </section>
               </section>
+
+              <div
+                className={`${styles.metadata} ${
+                  isReadMoreOpen ? styles.open : undefined
+                }`}
+              >
+                <button type="button" onClick={handleReadMorePanel}>
+                  informações{" "}
+                  {isReadMoreOpen ? <FiArrowDown /> : <FiArrowRight />}
+                </button>
+
+                <ul>
+                  <li>
+                    <span>Evento:</span>
+                    <strong>World Cup</strong>
+                  </li>
+                  <li>
+                    <span>País:</span>
+                    <strong>Japão</strong>
+                  </li>
+                  <li>
+                    <span>Data:</span>
+                    <strong>20 Jan 2020</strong>
+                  </li>
+                </ul>
+              </div>
 
               <div className={styles.winner}>
                 <div>

@@ -1,16 +1,20 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { FiX } from "react-icons/fi";
+import { FiX, FiMenu } from "react-icons/fi";
 
 import Header from "../components/Header";
 import styles from "../styles/pages/Home.module.scss";
 
 export default function Home() {
+  const [isAsideOpen, setIsAsideOpen] = useState(false);
   const [isSponsorPanelOpen, setIsSponsorPanelOpen] = useState(false);
 
   function changeSponsorPanelState() {
     setIsSponsorPanelOpen(!isSponsorPanelOpen);
+  }
+  function changeAsideState() {
+    setIsAsideOpen(!isAsideOpen);
   }
 
   return (
@@ -48,15 +52,16 @@ export default function Home() {
             </div>
           </article>
 
-          <aside className={styles.asideContainer}>
+          <aside
+            className={`${styles.asideContainer} ${
+              isAsideOpen ? styles.collapse : undefined
+            }`}
+          >
+            <button type="button" onClick={changeAsideState}>
+              {isAsideOpen ? <FiMenu /> : <FiX />}
+            </button>
             <div className={styles.asideLimit}>
               <article>
-                <div>
-                  <span>
-                    <FiX />
-                  </span>
-                </div>
-
                 <form>
                   <input type="search" placeholder="busque por partidas" />
                 </form>

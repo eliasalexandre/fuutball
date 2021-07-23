@@ -1,8 +1,11 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FiX, FiMenu } from "react-icons/fi";
 
+import WinnerImg from "../../public/assets/winner.png";
+import { Embed } from "../components/Embed";
 import Header from "../components/Header";
 import styles from "../styles/pages/Home.module.scss";
 
@@ -49,6 +52,25 @@ export default function Home() {
                   <span>20 Jan 2020</span>
                 </section>
               </section>
+
+              <div className={styles.winner}>
+                <div>
+                  <div>
+                    <Image
+                      src={WinnerImg}
+                      width={100}
+                      height={70}
+                      alt="winner"
+                      draggable={false}
+                    />
+                    <span>Vencedor:</span>
+                  </div>
+
+                  <h2>Real Madrid</h2>
+                </div>
+              </div>
+
+              <Embed />
             </div>
           </article>
 

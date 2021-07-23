@@ -1,0 +1,14 @@
+.embedContainer {
+  height: 100%;
+
+  padding: 4rem 0;
+
+  > article {
+    display: flex;
+    flex-direction: column;
+
+    > div {
+      box-shadow: var(--global-transition);
+    }
+  }
+}
